@@ -1,6 +1,6 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
-import { Typography, Box } from '@mui/material';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { Typography, Box, Stack } from '@mui/material';
 
 const data = [
   { name: 'Jan \'23', value: 30 },
@@ -19,13 +19,36 @@ const data = [
 const ThirtChart = () => {
   return (
     <Box sx={{ p: 2, backgroundColor: 'white', borderRadius: 1, border: '2px solid white' }}>
-      <Typography variant="h6" component="div">
-        Total Subscription amount
-      </Typography>
-      <Typography variant="h4" color="text.primary" gutterBottom>
+      <Stack direction="row" alignItems="center" spacing={2} sx={{ mb: 2 }}>
+        {/* Small Rectangle Box with a Small AreaChart */}
+        <Box
+          sx={{
+            width: 60,
+            height: 40,
+            backgroundColor: 'white',
+            border: '1px solid #ccc',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderRadius: '4px',
+          }}
+        >
+          <ResponsiveContainer width="100%" height="100%">
+            <AreaChart data={data}>
+              <XAxis hide />
+              <YAxis hide />
+              <Area type="monotone" dataKey="value" stroke="blue" fill="yellow" />
+            </AreaChart>
+          </ResponsiveContainer>
+        </Box>
+        <Typography variant="h6" component="div" fontWeight="bold">
+          Total Subscription Amount
+        </Typography>
+      </Stack>
+      <Typography variant="h4" color="text.primary" gutterBottom fontWeight="bold">
         $8,999
       </Typography>
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="100%" height={450}>
         <AreaChart
           data={data}
           margin={{

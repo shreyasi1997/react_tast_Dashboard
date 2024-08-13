@@ -19,13 +19,12 @@ const FirstChart = () => {
         </Box>
 
         {/* Second Box */}
-        <Box sx={{ backgroundColor: 'white', padding: 2, flex: 1,height:"auto" }}>
-          <Typography variant="h6">Monthly User Analysis</Typography>
+        <Box sx={{ backgroundColor: 'white', padding: 2, flex: 1,height:"auto",marginTop:"30px" }}>
           <Month/>
         </Box>
 
         {/* Third Box */}
-        <Box sx={{ backgroundColor: 'white', padding: 2, flex: 1 }}>
+        <Box sx={{ backgroundColor: 'white', padding: 2, flex: 1 ,marginTop:"30px"}}>
           {/* <Typography>Content for the third box.</Typography> */}
           <ThirtChart/>
         </Box>
